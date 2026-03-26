@@ -8,7 +8,7 @@ find_package(glfw3 REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(glm REQUIRED)
 
-add_executable(rw_sim src/main.cpp)
+add_executable(rw_sim src/main.cpp src/SimData.cpp)
 
 target_include_directories(rw_sim PRIVATE include)
 
