@@ -15,7 +15,9 @@ void main()
 
     vec3 lightDir = normalize(lightPos - fragPos);
 
-    float diff = max(dot(fragNormal, lightDir), 0.0);
+    float diff = 0.3 * max(dot(fragNormal, lightDir), 0.0);
 
-    fragColor = vec4(vec3(0.0118, 0.9882, 0.4510) * (diff + ambient), fragConcentration);
+    if (fragConcentration < 0.15) discard;
+
+    fragColor = vec4(mix(vec3(0.0, 1.0, 1.0), vec3(1.0, 1.0, 0.0), fragConcentration) * (diff + ambient), 1.0);
 }

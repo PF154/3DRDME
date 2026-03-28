@@ -18,7 +18,7 @@
 #include <future>
 #include <chrono>
 
-Simulation sim(ParamSet{0.035f, 0.065f, 0.16f, 0.08f, 1.0f, 1.0f});
+Simulation sim(ParamSet{0.012f, 0.059f, 0.16f, 0.08f, 1.0f, 1.0f});
 
 struct Camera 
 {
@@ -303,7 +303,7 @@ int main()
         glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-        glUniform3fv(lightPosLoc, 1, glm::value_ptr(glm::vec3(200.0f, 200.0f, 200.0f)));
+        glUniform3fv(lightPosLoc, 1, glm::value_ptr(glm::vec3(200.0f, 400.0f, 200.0f)));
         glUniform3fv(viewPosLoc, 1, glm::value_ptr(glm::vec3(camX, camY, camZ)));
 
         // if (simData.update())
